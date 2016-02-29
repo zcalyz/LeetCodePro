@@ -1,19 +1,9 @@
 package com.zc.stack;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
-public class Solution {
-	private static List<String> operators;
-	
-	static{
-		operators = new ArrayList<String>();
-		operators.add("+");
-		operators.add("-");
-		operators.add("*");
-		operators.add("/");
-	}
+public class SolutionQuick {
+	private static String operators = "+-*/";
 	
 	public static void main(String[] args) {
 		String[] tokens = new String[]{"4", "13", "5", "/", "+"};
@@ -25,21 +15,16 @@ public class Solution {
 		Stack<Integer> stack = new Stack<Integer>();
 		
 		for(String var : tokens){
-			if(isOperator(var)){
+			if(operators.contains(var)){
 				 int value2 = stack.pop();
 				 int value1 = stack.pop();
 				 stack.push(operate(value1, value2, var));
 			}else{
 				stack.push(Integer.valueOf(var));
 			}
-		}
-		
+		}	
 		return stack.pop();
     }
-	
-	public boolean isOperator(String operator){
-		return operators.contains(operator);
-	}
 	
 	public int operate(int value1, int value2, String operator){
 		switch(operator){
