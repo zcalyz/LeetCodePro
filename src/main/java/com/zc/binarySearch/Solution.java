@@ -11,6 +11,9 @@ public class Solution {
 	
 	public int[] searchRange(int[] nums, int target) {
 		int[] result = {-1,-1};		
+		
+		if(result.length == 0) return result;
+		
 		int index = binarySearch(nums, 0, nums.length-1, target);
 		if(index != -1){
 			int start = index;
