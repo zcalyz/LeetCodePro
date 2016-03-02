@@ -3,6 +3,7 @@ package com.zc.hash;
 import java.util.HashMap;
 import java.util.Map;
 // AC
+// 128. Longest Consecutive Sequence
 public class Solution1 {
 	private Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 	
